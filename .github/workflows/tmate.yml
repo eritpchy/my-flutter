@@ -12,5 +12,7 @@ jobs:
         flutter-version: 3.19.0
     - name: Tmate set mouse on
       run: echo "set -g mouse on"  >> ~/.tmux.conf
+    - name: Flutter build
+      run: flutter build macos -v
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
