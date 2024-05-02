@@ -9,7 +9,7 @@ jobs:
       uses: subosito/flutter-action@v2
       with:
         channel: stable
-        flutter-version: 3.22.0
+        flutter-version: 3.19.0
     - name: Tmate set mouse on
       run: echo "set -g mouse on"  >> ~/.tmux.conf
     - name: Setup tmate session
