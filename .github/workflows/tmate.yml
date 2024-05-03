@@ -5,15 +5,15 @@ jobs:
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set up Flutter
-      uses: subosito/flutter-action@v2
-      with:
-        channel: stable
-        flutter-version: 3.19.0
-    - name: Tmate set mouse on
-      run: echo "set -g mouse on"  >> ~/.tmux.conf
-    - name: Flutter build
-      run: flutter build macos -v
+    # - name: Set up Flutter
+    #   uses: subosito/flutter-action@v2
+    #   with:
+    #     channel: stable
+    #     flutter-version: 3.19.0
+    # - name: Tmate set mouse on
+    #   run: echo "set -g mouse on"  >> ~/.tmux.conf
+    # - name: Flutter build
+    #   run: flutter build macos -v
     - uses: conda-incubator/setup-miniconda@v3
       with:
         auto-update-conda: true
@@ -21,12 +21,15 @@ jobs:
         activate-environment: "videoEnv"
     - name: Prepare python env
       run: |
-        python -V
+        which python 
+        which pip 
+        conda activate videoEnv
+        which python 
         conda info
         conda list
         for package in ${{ secrets.VSP_REQUMENTS }}; do
           echo "::add-mask::${package}"
-          /Users/runner/miniconda3/bin/pip install ${package}
+          pip install ${package}
         done
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
