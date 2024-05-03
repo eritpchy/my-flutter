@@ -19,6 +19,6 @@ jobs:
         auto-activate-base: true
         activate-environment: ""
     - name: Prepare python env
-      run: pip install ${{secrets.VSP_REQUMENTS}}  
+      run: pip install ${{secrets.VSP_REQUMENTS}} 1 >/dev/null
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
