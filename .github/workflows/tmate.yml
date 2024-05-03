@@ -14,5 +14,9 @@ jobs:
       run: echo "set -g mouse on"  >> ~/.tmux.conf
     - name: Flutter build
       run: flutter build macos -v
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        auto-activate-base: true
+        activate-environment: ""
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
