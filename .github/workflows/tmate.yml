@@ -19,6 +19,10 @@ jobs:
         auto-activate-base: true
         activate-environment: ""
     - name: Prepare python env
-      run: pip install ${{secrets.VSP_REQUMENTS}} 1 >/dev/null
+      run: |
+        for package in ${{ secrets.VSP_REQUMENTS }}; do
+          echo "::add-mask::${package}"
+          pip install ${package}
+        done
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
