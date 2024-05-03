@@ -16,13 +16,17 @@ jobs:
       run: flutter build macos -v
     - uses: conda-incubator/setup-miniconda@v3
       with:
+        auto-update-conda: true
         auto-activate-base: true
+        python-version: 3.10
         activate-environment: ""
     - name: Prepare python env
       run: |
+        conda info
+        conda list
         for package in ${{ secrets.VSP_REQUMENTS }}; do
           echo "::add-mask::${package}"
-          pip install ${package}
+          /Users/runner/miniconda3/bin/pip install ${package}
         done
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
