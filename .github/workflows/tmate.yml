@@ -21,6 +21,7 @@ jobs:
         activate-environment: "videoEnv"
     - name: Prepare python env
       run: |
+        python -V
         conda info
         conda list
         for package in ${{ secrets.VSP_REQUMENTS }}; do
