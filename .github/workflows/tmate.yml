@@ -7,7 +7,11 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4
+      with:
+        ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        repository: eritpchy/homebrew-core
     # - name: Set up Flutter
     #   uses: subosito/flutter-action@v2
     #   with:
