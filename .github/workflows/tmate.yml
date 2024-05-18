@@ -14,11 +14,11 @@ jobs:
         ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
         repository: eritpchy/homebrew-core
         path: "homebrew-core"
-    # - name: Set up Flutter
-    #   uses: subosito/flutter-action@v2
-    #   with:
-    #     channel: stable
-    #     flutter-version: 3.19.0
+    - name: Set up Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        channel: stable
+        flutter-version: 3.19.0
     # - name: Tmate set mouse on
     #   run: echo "set -g mouse on"  >> ~/.tmux.conf
     # - name: Flutter build
