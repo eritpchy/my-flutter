@@ -6,12 +6,14 @@ on:
 jobs:
   build:
     runs-on: macos-latest
+    timeout-minutes: 360
     steps:
     - uses: actions/checkout@v4
     - uses: actions/checkout@v4
       with:
         ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
         repository: eritpchy/homebrew-core
+        path: "homebrew-core"
     # - name: Set up Flutter
     #   uses: subosito/flutter-action@v2
     #   with:
