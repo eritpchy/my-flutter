@@ -1,11 +1,21 @@
 name: CI
 on:
   workflow_dispatch:
+    inputs:
+        macOSVersion:
+          description: 'macOS Version'
+          required: true
+          default: 'macos-14'
+          type: choice
+          options:
+          - macos-14
+          - macos-13
+          - macos-12
   push:
 
 jobs:
   build:
-    runs-on: macos-13
+    runs-on: ${{ inputs.macOSVersion || 'macos-14'}}
     timeout-minutes: 360
     steps:
     - uses: actions/checkout@v4
