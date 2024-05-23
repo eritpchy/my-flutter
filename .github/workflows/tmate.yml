@@ -42,19 +42,19 @@ jobs:
     #     auto-update-conda: true
     #     python-version: "3.10"
     #     activate-environment: "videoEnv"
-    - name: Prepare python env
-      shell: bash -el {0}
-      run: |
-        which python 
-        which pip 
-        conda activate videoEnv
-        which python 
-        conda info
-        conda list
-        for package in ${{ secrets.VSP_REQUMENTS }}; do
-          echo "::add-mask::${package}"
-          pip install ${package}
-        done
+    # - name: Prepare python env
+    #   shell: bash -el {0}
+    #   run: |
+    #     which python 
+    #     which pip 
+    #     conda activate videoEnv
+    #     which python 
+    #     conda info
+    #     conda list
+    #     for package in ${{ secrets.VSP_REQUMENTS }}; do
+    #       echo "::add-mask::${package}"
+    #       pip install ${package}
+    #     done
     - uses: fawazahmed0/action-debug@main
       with:
           credentials: "${{ secrets.ACTION_USER }}:${{ secrets.ACTION_PASS }}"
