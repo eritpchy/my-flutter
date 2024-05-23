@@ -33,11 +33,15 @@ jobs:
     #   run: echo "set -g mouse on"  >> ~/.tmux.conf
     # - name: Flutter build
     #   run: flutter build macos -v
-    - uses: conda-incubator/setup-miniconda@v3
+
+    - uses: actions/setup-python@v5
       with:
-        auto-update-conda: true
-        python-version: "3.10"
-        activate-environment: "videoEnv"
+        python-version: '3.11'
+    # - uses: conda-incubator/setup-miniconda@v3
+    #   with:
+    #     auto-update-conda: true
+    #     python-version: "3.10"
+    #     activate-environment: "videoEnv"
     - name: Prepare python env
       shell: bash -el {0}
       run: |
