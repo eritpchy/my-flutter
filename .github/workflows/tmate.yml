@@ -51,5 +51,8 @@ jobs:
           echo "::add-mask::${package}"
           pip install ${package}
         done
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+    - uses: fawazahmed0/action-debug@main
+      with:
+          credentials: "${{ secrets.ACTION_USER }}:${{ secrets.ACTION_PASS }}"
+    # - name: Setup tmate session
+    #   uses: mxschmitt/action-tmate@v3
