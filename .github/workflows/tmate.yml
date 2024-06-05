@@ -37,11 +37,11 @@ jobs:
     # - uses: actions/setup-python@v5
     #   with:
     #     python-version: '3.11'
-    - uses: conda-incubator/setup-miniconda@v3
-      with:
-        auto-update-conda: true
-        python-version: "3.11"
-        activate-environment: "videoEnv"
+    # - uses: conda-incubator/setup-miniconda@v3
+    #   with:
+    #     auto-update-conda: true
+    #     python-version: "3.11"
+    #     activate-environment: "videoEnv"
     # - name: Prepare python env
     #   shell: bash -el {0}
     #   run: |
